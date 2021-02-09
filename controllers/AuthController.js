@@ -20,7 +20,7 @@ class Controller {
       if (!user) {
         return res
           .status(422)
-          .json(response("Fail", "Username or password not found"));
+          .json(response("Fail", "Username or password not found",req.body));
       }
 
       if (user.role === "user") throw Error("Anda tidak bisa masuk");
